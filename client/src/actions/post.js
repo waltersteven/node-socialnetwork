@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { setAlert } from './alert';
-import { ADD_POST, DELETE_POST, GET_POSTS, POST_ERROR, UPDATE_LIKES } from './types';
+import { ADD_POST, DELETE_POST, GET_POST, GET_POSTS, POST_ERROR, UPDATE_LIKES } from './types';
 
 // Get Posts
 export const getPosts = () => async (dispatch) => {
@@ -19,80 +19,97 @@ export const getPosts = () => async (dispatch) => {
   }
 };
 
-// Add like
-export const addLike = postId => async dispatch => {
+// Get Post
+export const getPost = (id) => async (dispatch) => {
   try {
-    const res = await axios.put(`/api/posts/like/${postId}`)
+    const res = await axios.get(`/api/posts/${id}`);
 
     dispatch({
-      type: UPDATE_LIKES,
-      payload: { postId, likes: res.data }
-    })
+      type: GET_POST,
+      payload: res.data,
+    });
   } catch (err) {
     dispatch({
       type: POST_ERROR,
-      payload: { msg: err.response.statusText, status: err.response.status}
-    })
+      payload: { msg: err.response.statusText, status: err.response.status },
+    });
   }
-}
+};
+
+// Add like
+export const addLike = (postId) => async (dispatch) => {
+  try {
+    const res = await axios.put(`/api/posts/like/${postId}`);
+
+    dispatch({
+      type: UPDATE_LIKES,
+      payload: { postId, likes: res.data },
+    });
+  } catch (err) {
+    dispatch({
+      type: POST_ERROR,
+      payload: { msg: err.response.statusText, status: err.response.status },
+    });
+  }
+};
 
 // Remove like
-export const removeLike = postId => async dispatch => {
+export const removeLike = (postId) => async (dispatch) => {
   try {
-    const res = await axios.put(`/api/posts/unlike/${postId}`)
+    const res = await axios.put(`/api/posts/unlike/${postId}`);
 
     dispatch({
       type: UPDATE_LIKES,
-      payload: { postId, likes: res.data }
-    })
+      payload: { postId, likes: res.data },
+    });
   } catch (err) {
     dispatch({
       type: POST_ERROR,
-      payload: { msg: err.response.statusText, status: err.response.status}
-    })
+      payload: { msg: err.response.statusText, status: err.response.status },
+    });
   }
-}
+};
 
 // Delete post
-export const deletePost = id => async dispatch => {
+export const deletePost = (id) => async (dispatch) => {
   try {
     await axios.delete(`/api/posts/${id}`);
 
     dispatch({
       type: DELETE_POST,
-      payload: id
+      payload: id,
     });
 
-    dispatch(setAlert('Post Removed.', 'success'))
+    dispatch(setAlert('Post Removed.', 'success'));
   } catch (err) {
     dispatch({
       type: POST_ERROR,
-      payload: { msg: err.response.statusText, status: err.response.status}
-    })
+      payload: { msg: err.response.statusText, status: err.response.status },
+    });
   }
-}
+};
 
 // Add post
-export const addPost = formData => async dispatch => {
+export const addPost = (formData) => async (dispatch) => {
   const config = {
     headers: {
-      'Content-Type': 'application/json'
-    }
-  }
+      'Content-Type': 'application/json',
+    },
+  };
 
   try {
     const res = await axios.post(`/api/posts`, formData, config);
 
     dispatch({
       type: ADD_POST,
-      payload: res.data
+      payload: res.data,
     });
 
-    dispatch(setAlert('Post Created.', 'success'))
+    dispatch(setAlert('Post Created.', 'success'));
   } catch (err) {
     dispatch({
       type: POST_ERROR,
-      payload: { msg: err.response.statusText, status: err.response.status}
-    })
+      payload: { msg: err.response.statusText, status: err.response.status },
+    });
   }
-}
+};
