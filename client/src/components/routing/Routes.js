@@ -14,6 +14,8 @@ import Profile from '../profile/Profile';
 import Posts from '../posts/Posts';
 import Post from '../post/Post';
 import NotFound from '../layout/NotFound';
+import TestPage from "../TestPage";
+
 //
 import PrivateRoute from '../routing/PrivateRoute';
 
@@ -22,6 +24,7 @@ const Routes = () => {
     <section className='container'>
       <Alert />
       <Switch>
+      <Route exact path='/test-page' component={TestPage}></Route>
         <Route exact path='/register' component={Register}></Route>
         <Route exact path='/login' component={Login}></Route>
         <Route exact path='/profiles' component={Profiles}></Route>
