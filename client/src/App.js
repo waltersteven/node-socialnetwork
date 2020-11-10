@@ -10,7 +10,6 @@ import { Provider } from 'react-redux';
 import store from './store';
 import setAuthToken from './utils/setAuthToken';
 import './App.css';
-import ExternalScript from "./components/ExternalScript";
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);
@@ -20,9 +19,6 @@ function App() {
   useEffect(() => {
     store.dispatch(loadUser());
   }, []);
-
-  ExternalScript("https://api-tiger.zoovu.com/api/v1/advisors/RrbHTD8v/js-loader?locale=en-GB");
-  ExternalScript("https://api-tiger.zoovu.com/api/v1/integrations/lpjpkz/zoovu-tracking")
    
   return (
     <Provider store={store}>

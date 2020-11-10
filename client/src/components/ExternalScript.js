@@ -6,10 +6,10 @@ const ExternalScript = (src) => {
         script.src = src;
         script.type = 'text/javascript';
 
-        document.body.appendChild(script);
+        document.getElementById("root").appendChild(script);
 
         return () => {
-            document.body.removeChild(script);
+            document.getElementById("root").removeChild(script);
         }
     }, [src])
 }
