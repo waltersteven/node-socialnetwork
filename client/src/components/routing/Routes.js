@@ -14,34 +14,36 @@ import Profile from '../profile/Profile';
 import Posts from '../posts/Posts';
 import Post from '../post/Post';
 import NotFound from '../layout/NotFound';
-import TestPage from "../TestPage";
-import PanelPage from "../PanelPage";
+import TigerAssistant from '../pages/TigerAssistant';
+import BarracudaAssistant from '../pages/BarracudaAssistant';
+import Blank from '../pages/Blank';
 
 //
 import PrivateRoute from '../routing/PrivateRoute';
 
 const Routes = () => {
-  return (
-    <section className='container'>
-      <Alert />
-      <Switch>
-        <Route exact path='/test-page' component={TestPage}></Route>
-        <Route exact path='/panel-page' component={PanelPage}></Route>
-        <Route exact path='/register' component={Register}></Route>
-        <Route exact path='/login' component={Login}></Route>
-        <Route exact path='/profiles' component={Profiles}></Route>
-        <Route exact path='/profile/:id' component={Profile}></Route>
-        <PrivateRoute exact path='/dashboard' component={Dashboard}></PrivateRoute>
-        <PrivateRoute exact path='/create-profile' component={CreateProfile}></PrivateRoute>
-        <PrivateRoute exact path='/edit-profile' component={EditProfile}></PrivateRoute>
-        <PrivateRoute exact path='/add-experience' component={AddExperience}></PrivateRoute>
-        <PrivateRoute exact path='/add-education' component={AddEducation}></PrivateRoute>
-        <PrivateRoute exact path='/posts' component={Posts}></PrivateRoute>
-        <PrivateRoute exact path='/posts/:id' component={Post}></PrivateRoute>
-        <Route component={NotFound} />
-      </Switch>
-    </section>
-  );
+	return (
+		<section className='container'>
+			<Alert />
+			<Switch>
+				<Route exact path='/tiger-assistant' component={TigerAssistant}></Route>
+				<Route exact path='/barracuda-assistant' component={BarracudaAssistant}></Route>
+				<Route exact path='/blank-page' component={Blank}></Route>
+				<Route exact path='/register' component={Register}></Route>
+				<Route exact path='/login' component={Login}></Route>
+				<Route exact path='/profiles' component={Profiles}></Route>
+				<Route exact path='/profile/:id' component={Profile}></Route>
+				<PrivateRoute exact path='/dashboard' component={Dashboard}></PrivateRoute>
+				<PrivateRoute exact path='/create-profile' component={CreateProfile}></PrivateRoute>
+				<PrivateRoute exact path='/edit-profile' component={EditProfile}></PrivateRoute>
+				<PrivateRoute exact path='/add-experience' component={AddExperience}></PrivateRoute>
+				<PrivateRoute exact path='/add-education' component={AddEducation}></PrivateRoute>
+				<PrivateRoute exact path='/posts' component={Posts}></PrivateRoute>
+				<PrivateRoute exact path='/posts/:id' component={Post}></PrivateRoute>
+				<Route component={NotFound} />
+			</Switch>
+		</section>
+	);
 };
 
 export default Routes;
