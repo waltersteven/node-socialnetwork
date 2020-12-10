@@ -7,7 +7,7 @@ function BarracudaAssistant() {
 	);
 	return (
 		<div>
-			<h1>Barracuda - Smartphone Finder</h1>
+			<h1 style={{ marginBottom: 40 }}>Barracuda - Smartphone Finder</h1>
 			<div id='zoovu-assistant'></div>
 		</div>
 	);

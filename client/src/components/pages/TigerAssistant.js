@@ -7,7 +7,7 @@ const TigerAssistant = () => {
 
 	return (
 		<div>
-			<h1>Tiger - Laptop Finder</h1>
+			<h1 style={{ marginBottom: 40 }}>Tiger - Laptop Finder</h1>
 			<div id='zoovu-assistant'></div>
 		</div>
 	);
