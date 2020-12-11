@@ -18,5 +18,55 @@
   <noscript>You need to enable JavaScript to run this app.</noscript>
   <div id="root"></div>
 </body>
+<script>
+  var dataLayer = {
+    transactionId: '00102446615',
+    products: [
+      { productName: 'SKIRT', skuCode: 1, price: 1.22, qty: 5 },
+      { productName: 'SHOES', skuCode: 2, price: 3.44, qty: 6 },
+      { productName: 'UNDERWEAR', skuCode: 3, price: 2.12, qty: 7 },
+      { productName: 'SOAP', skuCode: 4, price: 8.34, qty: 9 },
+    ],
+    countryCode: 'DO',
+  };
+
+  var digitalData = {
+    offers: {
+      products: [
+        { productName: 'iPhone', skuCode: 1, price: 1.0, minQty: 12, offerId: '0053A' },
+        { productName: 'iPad', skuCode: 2, price: 3.0, minQty: 16, offerId: '0090B' },
+        { productName: 'Labtop', skuCode: 3, price: 2.0, minQty: 71, offerId: '0078C' },
+        {
+          productName: 'USBC Adapter',
+          skuCode: 4,
+          price: 8.0,
+          minQty: 92,
+          offerId: '0023A',
+        },
+      ],
+      startDate: 'Dec 21, 2020',
+      endDate: 'Dec 27, 2020',
+    },
+  };
+
+  var utag_data = {
+    offers: {
+      products: [
+        { productName: 'Poultry', skuCode: 1, price: 1.0, minQty: 12, offerId: '0053A' },
+        { productName: 'Candies', skuCode: 2, price: 3.0, minQty: 16, offerId: '0090B' },
+        { productName: 'Fish', skuCode: 3, price: 2.0, minQty: 71, offerId: '0078C' },
+        {
+          productName: 'Vegetables',
+          skuCode: 4,
+          price: 8.0,
+          minQty: 92,
+          offerId: '0023A',
+        },
+      ],
+      startDate: 'Dec 21, 2020',
+      endDate: 'Dec 27, 2020',
+    },
+  };
+</script>
 
 </html>
