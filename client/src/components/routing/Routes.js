@@ -16,6 +16,8 @@ import Post from '../post/Post';
 import NotFound from '../layout/NotFound';
 import TigerAssistant from '../pages/TigerAssistant';
 import BarracudaAssistant from '../pages/BarracudaAssistant';
+import NoDivAssistant from '../pages/NoDivAssistant';
+import NoScriptAssistant from '../pages/NoScriptAssistant';
 import Blank from '../pages/Blank';
 
 //
@@ -28,6 +30,8 @@ const Routes = () => {
 			<Switch>
 				<Route exact path='/tiger-assistant' component={TigerAssistant}></Route>
 				<Route exact path='/barracuda-assistant' component={BarracudaAssistant}></Route>
+				<Route exact path='/no-div-assistant' component={NoDivAssistant}></Route>
+				<Route exact path='/no-script-assistant' component={NoScriptAssistant}></Route>
 				<Route exact path='/blank-page' component={Blank}></Route>
 				<Route exact path='/register' component={Register}></Route>
 				<Route exact path='/login' component={Login}></Route>
