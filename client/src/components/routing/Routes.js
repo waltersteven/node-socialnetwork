@@ -22,6 +22,7 @@ import Blank from '../pages/Blank';
 
 //
 import PrivateRoute from '../routing/PrivateRoute';
+import TigerAssistantES from '../pages/spanish/TigerAssistantES';
 
 const Routes = () => {
 	return (
@@ -29,6 +30,7 @@ const Routes = () => {
 			<Alert />
 			<Switch>
 				<Route exact path='/tiger-assistant' component={TigerAssistant}></Route>
+				<Route exact path='/es-tiger-assistant' component={TigerAssistantES}></Route>
 				<Route exact path='/barracuda-assistant' component={BarracudaAssistant}></Route>
 				<Route exact path='/no-div-assistant' component={NoDivAssistant}></Route>
 				<Route exact path='/no-script-assistant' component={NoScriptAssistant}></Route>
