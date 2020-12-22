@@ -14,7 +14,8 @@ import Profile from '../profile/Profile';
 import Posts from '../posts/Posts';
 import Post from '../post/Post';
 import NotFound from '../layout/NotFound';
-import TigerAssistant from '../pages/TigerAssistant';
+import LaptopFinderAssistant from '../pages/english/LaptopFinderAssistant';
+import CoffeeMachinesAssistant from '../pages/english/CoffeeMachinesAssistant';
 import BarracudaAssistant from '../pages/BarracudaAssistant';
 import NoDivAssistant from '../pages/NoDivAssistant';
 import NoScriptAssistant from '../pages/NoScriptAssistant';
@@ -29,7 +30,16 @@ const Routes = () => {
 		<section className='container'>
 			<Alert />
 			<Switch>
-				<Route exact path='/tiger-assistant' component={TigerAssistant}></Route>
+				<Route
+					exact
+					path='/laptop-finder-assistant'
+					component={LaptopFinderAssistant}
+				></Route>
+				<Route
+					exact
+					path='/coffee-machines-assistant'
+					component={CoffeeMachinesAssistant}
+				></Route>
 				<Route exact path='/es-tiger-assistant' component={TigerAssistantES}></Route>
 				<Route exact path='/barracuda-assistant' component={BarracudaAssistant}></Route>
 				<Route exact path='/no-div-assistant' component={NoDivAssistant}></Route>
