@@ -1,5 +1,4 @@
 import React from 'react';
-import ExternalScript from '../ExternalScript';
 
 const NoScriptAssistant = () => {
 	return (
