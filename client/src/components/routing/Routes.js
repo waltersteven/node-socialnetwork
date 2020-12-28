@@ -16,10 +16,13 @@ import Post from '../post/Post';
 import NotFound from '../layout/NotFound';
 import LaptopFinderAssistant from '../pages/english/LaptopFinderAssistant';
 import CoffeeMachinesAssistant from '../pages/english/CoffeeMachinesAssistant';
+import BikesFinderAssistant from '../pages/english/BikesFinderAssistant';
+import SoundSystemAssistant from '../pages/english/SoundSystemAssistant';
 import BarracudaAssistant from '../pages/BarracudaAssistant';
 import NoDivAssistant from '../pages/NoDivAssistant';
 import NoScriptAssistant from '../pages/NoScriptAssistant';
 import Blank from '../pages/Blank';
+import ThankYouPage from '../pages/ThankYouPage';
 
 //
 import PrivateRoute from '../routing/PrivateRoute';
@@ -40,7 +43,18 @@ const Routes = () => {
 					path='/coffee-machines-assistant'
 					component={CoffeeMachinesAssistant}
 				></Route>
+				<Route
+					exact
+					path='/bikes-finder-assistant'
+					component={BikesFinderAssistant}
+				></Route>
+				<Route
+					exact
+					path='/sound-system-assistant'
+					component={SoundSystemAssistant}
+				></Route>
 				<Route exact path='/es-tiger-assistant' component={TigerAssistantES}></Route>
+				<Route exact path='/thank-you-page' component={ThankYouPage}></Route>
 				<Route exact path='/barracuda-assistant' component={BarracudaAssistant}></Route>
 				<Route exact path='/no-div-assistant' component={NoDivAssistant}></Route>
 				<Route exact path='/no-script-assistant' component={NoScriptAssistant}></Route>
