@@ -15,6 +15,7 @@ import Posts from '../posts/Posts';
 import Post from '../post/Post';
 import NotFound from '../layout/NotFound';
 import LaptopFinderAssistant from '../pages/english/LaptopFinderAssistant';
+import TigerSoundSystem from '../pages/english/TigerSoundSystem';
 import CoffeeMachinesAssistant from '../pages/english/CoffeeMachinesAssistant';
 import BikesFinderAssistant from '../pages/english/BikesFinderAssistant';
 import SoundSystemAssistant from '../pages/english/SoundSystemAssistant';
@@ -27,12 +28,18 @@ import ThankYouPage from '../pages/ThankYouPage';
 //
 import PrivateRoute from '../routing/PrivateRoute';
 import TigerAssistantES from '../pages/spanish/TigerAssistantES';
+import BarracudaThankYou from '../pages/BarracudaThankYou';
 
 const Routes = () => {
 	return (
 		<section className='container'>
 			<Alert />
 			<Switch>
+				<Route
+					exact
+					path='/tiger/sound-system-assistant'
+					component={TigerSoundSystem}
+				></Route>
 				<Route
 					exact
 					path='/laptop-finder-assistant'
@@ -55,6 +62,7 @@ const Routes = () => {
 				></Route>
 				<Route exact path='/es-tiger-assistant' component={TigerAssistantES}></Route>
 				<Route exact path='/thank-you-page' component={ThankYouPage}></Route>
+				<Route exact path='/barracuda/thank-you-page' component={BarracudaThankYou}></Route>
 				<Route exact path='/barracuda-assistant' component={BarracudaAssistant}></Route>
 				<Route exact path='/no-div-assistant' component={NoDivAssistant}></Route>
 				<Route exact path='/no-script-assistant' component={NoScriptAssistant}></Route>
